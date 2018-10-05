@@ -9,10 +9,10 @@ int main()
 	char matkul[25], nama[25], coba;
 	string indeks;
 
-	cout << "\t\t\t=================================";
-	cout << "\n\t\t\t||        Coded By Nabil       ||";
-	cout << "\n\t\t\t|| Menentukan indeks mahasiswa ||";
-	cout << "\n\t\t\t================================="<<endl<<endl;
+	cout << "\t\t\t=======================================";
+	cout << "\n\t\t\t||           Coded By Nabil          ||";
+	cout << "\n\t\t\t|| Penilaian Hasil Belajar Mahasiswa ||";
+	cout << "\n\t\t\t======================================="<<endl<<endl;
 	HITUNG:
 	cout << "Siapa nama anda ? "; cin.getline(nama, sizeof(nama));
 	cout << "\nMata Kuliah apa yang anda ambil ? "; cin.getline(matkul, sizeof(matkul));
@@ -24,7 +24,7 @@ int main()
 	cout << "\nMasukan nilai UAS anda = "; cin >> uas;
 	nilai = praktek*0.25 + tugas*0.2 + kuis*0.1 + uts*0.2 + uas*0.25;
 	
-	if (nilai >= 76)
+	if ((nilai >= 76) && (nilai <= 100))
 	{
 		indeks = 'A';
 		mutu = 4;
@@ -54,11 +54,20 @@ int main()
 		indeks = 'D';
 		mutu = 1;
 	}
-	else
+	else if ((nilai >= 0) && (nilai < 51))
 	{
 		indeks = 'E';
 		mutu = 0;
 	}
+	else
+	{
+		system("clear");
+		cout << "++Error \nAh Malas (^_^) ";
+		cout << "\n\nApakah anda ingin mencoba lagi ? (Y/N) "; cin >> coba; 
+		cout << "\n";
+		goto COBA;
+	}
+
 	system("clear");
 	cout << "====================================";
 	cout << "\n          HASIL PERHITUNGAN         ";
@@ -82,8 +91,8 @@ int main()
 	COBA:
 	if ((coba == 'Y') || (coba == 'y'))
 	{
-		cin.getline(nama, sizeof(nama));
-		system("clear"); //Agar variabel nama ketika goto HITUNG tidak diignore
+		cin.getline(nama, sizeof(nama)); //Agar variabel nama ketika goto HITUNG tidak diignore
+		system("clear"); 
 		goto HITUNG;
 	}
 	else if ((coba == 'N') || (coba == 'n'))
