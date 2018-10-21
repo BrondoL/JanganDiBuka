@@ -253,7 +253,7 @@ int main(){
     else if(menu==4){
        	system("clear");
         cout << "++Exiting...";
-        cin.ignore().get();
+        cin.ignore();
         system("clear");
         cout << "\n(^_^) Byeee " << nama << "  :p \n\n";
     }
@@ -261,6 +261,6 @@ int main(){
     else{
         cout << "Maaf menu tidak tersedia saat ini !!!" << endl;
 	}
-	
+
     return 0;
 }
