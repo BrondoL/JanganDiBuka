@@ -23,15 +23,14 @@ int main(){
     system("clear");
 
 
-    if(menu==1)
-    {
+    if(menu==1){
     	LOGIN:
     	int i;
         cout << "====================================";
 	    cout << "\n                LOGIN               ";
 	    cout << "\n====================================";
-        cout << "\n\nMasukan Username kamu : ";
-    	cin.getline(nama, sizeof(nama));
+        cout << "\n\nMasukan Username kamu : "; cin.getline(nama, sizeof(nama));
+    	
     	for(i = 0; nama[i] != '\0'; ++i);
     	if (i != 0){
         	cout << "Login Berhasil !!! ";
@@ -180,7 +179,6 @@ int main(){
 		}
 	}
    
-
     else if(menu==3){
     	int tebak, hasil, a;
     	if (lo == 0){
@@ -250,7 +248,7 @@ int main(){
                         cout << "\nPilihan tidak ada !";
                     }
 			}
-		}
+	}	
 
     else if(menu==4){
        	system("clear");
@@ -261,7 +259,8 @@ int main(){
     }
         
     else{
-        cout << "salah";
+        cout << "Maaf menu tidak tersedia saat ini !!!" << endl;
 	}
+	
     return 0;
 }
