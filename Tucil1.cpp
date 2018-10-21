@@ -135,26 +135,42 @@ int main(){
 			
 			}
 			else if(pilih==2){
+				cout<<"Mau taruhan berapa ? "; cin >> bet;
 				cout<<"Tebak jumlah skor Ganjil Genap !!!";
 				cout<<"\n\n[1]. Genap";
 				cout<<"\n[2]. Ganjil";
 				cout<<"\n\nPilihan anda : ";cin>>tebak;
-				cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-				cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+	
 				if (tebak == 1){
 					if((tim_a+tim_b)%2==0){
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nSelamat jawaban anda benar";
+						uang = uang + bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nMaaf anda kurang beruntung";
+						uang = uang - bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 				}
 				else if(tebak == 2){
 					if ((tim_a+tim_b)%2==1){
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nSelamat jawaban anda benar";
+						uang = uang + bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nMaaf anda kurang beruntung";
+						uang = uang - bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 				}
 			else{
@@ -179,10 +195,12 @@ int main(){
             cout << "====================================";
             cout << "\n            JUDI ROULETTE           ";
             cout << "\n====================================";
+            cout << "\n\nUang anda sekarang = " << uang;
+            cout << "\nMau taruhan berapa ? "; cin >> bet;
             cout << "\n\nTebak Warna Yang Keluar";
             cout << "\n\n[1]. Merah (x2)";
             cout << "\n[2]. Biru  (x2)";
-            cout << "\n[3]. Hitam (x8)";
+            cout << "\n[3]. Hitam (x6)";
             cout << "\n\nMasukan Pilihan >> "; cin >> tebak;
             srand(time(NULL));
             const char warna[9] = {1, 1, 1, 3, 2, 2, 2, 2, 1};
@@ -192,28 +210,40 @@ int main(){
                     if(hasil==1){
                         cout << "\nWarna yang keluar adalah warna : MERAH";
                         cout << "\n\nSelamat anda MENANG !!!";
+                        uang = uang + bet*2;
+                        cout << "\nUang anda sekarang = " << uang;
                     }
                     else if(hasil==2){
                     	cout << "\nWarna yang keluar adalah warna : BIRU";
                         cout << "\n\nSelamat anda MENANG !!!";
+                        uang = uang + bet*2;
+                        cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
 						cout << "\nWarna yang keluar adalah warna : HITAM";
                         cout << "\n\nSelamat anda MENANG !!!";
+                        uang = uang + bet*6;
+                        cout << "\nUang anda sekarang = " << uang;
 					}
 				}
                 else if ((tebak >= 1) && (tebak < 4)){
                     if(hasil==1){
                         cout << "\nWarna yang keluar adalah warna : MERAH";
                         cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+                        uang = uang - bet;
+                        cout << "\nUang anda sekarang = " << uang;
                     }
                     else if(hasil==2){
                     	cout << "\nWarna yang keluar adalah warna : BIRU";
                         cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+                        uang = uang - bet;
+                        cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
 						cout << "\nWarna yang keluar adalah warna : HITAM";
                         cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+                        uang = uang - bet;
+                        cout << "\nUang anda sekarang = " << uang;
 						}
 					}
                     else{
