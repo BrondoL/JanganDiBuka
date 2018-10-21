@@ -17,8 +17,9 @@ int main(){
     cout << "\n\n\nMenu Pilihan :";							
 	cout << "\n\n\t[1]. Login";						
 	cout << "\n\t[2]. Judi Bola";						    
-	cout << "\n\t[3]. Judi roulette";							
-	cout << "\n\t[4]. Exit";
+	cout << "\n\t[3]. Judi roulette";				
+	cout << "\n\t[4]. Cairkan Uang";			
+	cout << "\n\t[5]. Exit";
     cout << "\n\nMasukan Pilihan >> "; cin >> menu; cout<<endl<<endl; cin.ignore(); 
     system("clear");
 
@@ -129,9 +130,8 @@ int main(){
 				}
 				else{
 					cout<<"\n\nPilihan tidak ada !!!";
-		
 				}
-			
+
 			}
 			else if(pilih==2){
 				cout<<"Mau taruhan berapa ? "; cin >> bet;
@@ -250,7 +250,12 @@ int main(){
 			}
 	}	
 
-    else if(menu==4){
+	else if(menu==4){
+		system("clear");
+		cout << "KERJA TU YANG HALAL";
+	}
+
+    else if(menu==5){
        	system("clear");
         cout << "++Exiting...";
         cin.ignore();
