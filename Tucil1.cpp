@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-	int menu, score = 1000, lo = 0;
+	int menu, uang = 1000, lo = 0, bet;
 	char nama[25] = {};
 	MENU:
 	cout << "========================================================";
@@ -13,7 +13,7 @@ int main(){
 	cout << "\n||                      JUDI BERKAH                   ||";
 	cout << "\n========================================================"<<endl<<endl;
 	cout << "\t\t\tUsername   : " << nama;
-	cout << "\n\t\t\tScore      : " << score;
+	cout << "\n\t\t\tUang       : " << uang;
     cout << "\n\n\nMenu Pilihan :";							
 	cout << "\n\n\t[1]. Login";						
 	cout << "\n\t[2]. Judi Bola";						    
@@ -62,46 +62,70 @@ int main(){
 			cout << "====================================";
         	cout << "\n            JUDI BOLA           ";
         	cout << "\n====================================";
-			cout<<"\n[1]Tebak siapa yang menang !!";
-			cout<<"\n[2]Tebak Skor Ganjil Genap !!";
+			cout<<"\n[1].Tebak siapa yang menang !!";
+			cout<<"\n[2].Tebak Skor Ganjil Genap !!";
 			cout<<"\n\nPilih permainan yang ingin dimainkan : ";cin>>pilih;
 			system("clear");
 			srand(time(NULL));
-			const char skor[10]={1,2,1,3,5,4,2,5,4,3};
+			const char skor[10]={1,2,3,4,5,1,2,3,4,5};
 			a = rand()%10;
 			b = rand()%10;
 			tim_a = skor[a];
 			tim_b = skor[b];
 			if (pilih==1){
-				cout<<"Tebak siapa yang menang !!!";
+				cout<<"Mau taruhan berapa ? "; cin >> bet;
+				cout<<"\nTebak siapa yang menang !!!";
 				cout<<"\n\n[1] Tim A";
 				cout<<"\n[2] Tim B";
 				cout<<"\n[3] Seri";
 				cout<<"\n\nPilihan anda : ";cin>>tebak;
-				cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-				cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+		
 				if (tebak == 3){
 					if(tim_a == tim_b){
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nSelamat jawaban anda benar";
+						uang = uang + bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nMaaf anda kurang beruntung";
+						uang = uang - bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 				}
 				else if(tebak == 1){
 					if (tim_a>tim_b){
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nSelamat jawaban anda benar";
+						uang = uang + bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 					else{
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nMaaf anda kurang beruntung";
+						uang = uang - bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 				}
 				else if(tebak == 2){
 					if (tim_a<tim_b){
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nSelamat jawaban anda benar";
+						uang = uang + bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 					else {
+						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
+						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
 						cout<<"\n\nMaaf anda kurang beruntung";
+						uang = uang - bet;
+						cout << "\nUang anda sekarang = " << uang;
 					}
 				}
 				else{
@@ -112,8 +136,8 @@ int main(){
 			}
 			else if(pilih==2){
 				cout<<"Tebak jumlah skor Ganjil Genap !!!";
-				cout<<"\n\n[1] Genap";
-				cout<<"\n[2] Ganjil";
+				cout<<"\n\n[1]. Genap";
+				cout<<"\n[2]. Ganjil";
 				cout<<"\n\nPilihan anda : ";cin>>tebak;
 				cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
 				cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
@@ -143,6 +167,15 @@ int main(){
 
     else if(menu==3){
     	int tebak, hasil, a;
+    	if (lo == 0){
+			system("clear");
+			cout << "\tMaaf Anda Belum Login !";
+			cout << "\n\tSilahkan Login Dahulu !";
+			cin.ignore();
+			system("clear");
+			goto MENU;
+		}
+		else{
             cout << "====================================";
             cout << "\n            JUDI ROULETTE           ";
             cout << "\n====================================";
@@ -186,6 +219,7 @@ int main(){
                     else{
                         cout << "\nPilihan tidak ada !";
                     }
+			}
 		}
 
     else if(menu==4){
