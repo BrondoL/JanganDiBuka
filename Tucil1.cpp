@@ -54,7 +54,6 @@ int main(){
 			system("clear");
 			cout << "\tMaaf Anda Belum Login !";
 			cout << "\n\tSilahkan Login Dahulu !";
-			cin.getline(nama, sizeof(nama));
 			cin.ignore();
 			system("clear");
 			goto MENU;
