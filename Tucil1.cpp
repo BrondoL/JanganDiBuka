@@ -59,10 +59,11 @@ int main(){
 			goto MENU;
 		}
 		else{
+			BOLA:
 			cout << "====================================";
         	cout << "\n            JUDI BOLA           ";
         	cout << "\n====================================";
-			cout<<"\n[1].Tebak siapa yang menang !!";
+			cout<<"\n\n[1].Tebak siapa yang menang !!";
 			cout<<"\n[2].Tebak Skor Ganjil Genap !!";
 			cout<<"\n\nPilih permainan yang ingin dimainkan : ";cin>>pilih;
 			system("clear");
@@ -73,8 +74,12 @@ int main(){
 			tim_a = skor[a];
 			tim_b = skor[b];
 			if (pilih==1){
-				cout<<"Mau taruhan berapa ? "; cin >> bet;
-				cout<<"\nTebak siapa yang menang !!!";
+				cout << "====================================";
+        		cout << "\n            JUDI BOLA           ";
+        		cout << "\n====================================";
+				cout << "\n\nUang anda sekarang = " << uang;
+				cout<<"\nMau taruhan berapa ? "; cin >> bet;
+				cout<<"\n\n\tTebak siapa yang menang !!!";
 				cout<<"\n\n[1] Tim A";
 				cout<<"\n[2] Tim B";
 				cout<<"\n[3] Seri";
@@ -82,169 +87,318 @@ int main(){
 		
 				if (tebak == 3){
 					if(tim_a == tim_b){
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+						cout<<"\n\t--------------------------------";
+						cout<<"\n\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t--------------------------------";
 						cout<<"\n\nSelamat jawaban anda benar";
 						uang = uang + bet;
-						cout << "\nUang anda sekarang = " << uang;
-						if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+						cout << "\nUang anda sekarang = " << uang << endl;
+						char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
-						}	
+								goto BOLA;	
+						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;	
 					}
 					else{
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
-						cout<<"\n\nMaaf anda kurang beruntung";
+						cout<<"\n\t-------------------";
+						cout<<"\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t-------------------";
+						cout<<"\n\nMaaf anda kurang beruntung !!!";
 						uang = uang - bet;
-						cout << "\nUang anda sekarang = " << uang;
+						cout << "\nUang anda sekarang = " << uang<<endl;;
 						if (uang == 0){
+							cout << "\n\n\tAnda tidak bisa bermain lagi, silahkan ngutang uang dulu ke orang";
+							cin.ignore();
+							cin.ignore();
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;	
 					}
 				}
 				else if(tebak == 1){
 					if (tim_a>tim_b){
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+						cout<<"\n\t--------------------------------";
+						cout<<"\n\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t--------------------------------";
 						cout<<"\n\nSelamat jawaban anda benar";
 						uang = uang + bet;
-						cout << "\nUang anda sekarang = " << uang;
-						if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+						cout << "\nUang anda sekarang = " << uang << endl;
+						char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
-						}	
+								goto BOLA;	
+						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 					else{
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
-						cout<<"\n\nMaaf anda kurang beruntung";
+						cout<<"\n\t-------------------";
+						cout<<"\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t-------------------";
+						cout<<"\n\nMaaf anda kurang beruntung !!!";
 						uang = uang - bet;
-						cout << "\nUang anda sekarang = " << uang;	
+						cout << "\nUang anda sekarang = " << uang<<endl;;
 						if (uang == 0){
+							cout << "\n\n\tAnda tidak bisa bermain lagi, silahkan ngutang uang dulu ke orang";
+							cin.ignore();
+							cin.ignore();
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 				}
 				else if(tebak == 2){
 					if (tim_a<tim_b){
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+						cout<<"\n\t--------------------------------";
+						cout<<"\n\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t--------------------------------";
 						cout<<"\n\nSelamat jawaban anda benar";
 						uang = uang + bet;
-						cout << "\nUang anda sekarang = " << uang;
-						if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+						cout << "\nUang anda sekarang = " << uang << endl;
+						char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
-						}	
+								goto BOLA;	
+						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;	
 					}
 					else {
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
-						cout<<"\n\nMaaf anda kurang beruntung";
+						cout<<"\n\t-------------------";
+						cout<<"\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t-------------------";
+						cout<<"\n\nMaaf anda kurang beruntung !!!";
 						uang = uang - bet;
-						cout << "\nUang anda sekarang = " << uang;
+						cout << "\nUang anda sekarang = " << uang<<endl;;
 						if (uang == 0){
+							cout << "\n\n\tAnda tidak bisa bermain lagi, silahkan ngutang uang dulu ke orang";
+							cin.ignore();
+							cin.ignore();
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 				}
 				else{
 					cout<<"\n\nPilihan tidak ada !!!";
 				}
 
-			}
+			}//================================================================================================================================
 			else if(pilih==2){
-				cout<<"Mau taruhan berapa ? "; cin >> bet;
-				cout<<"Tebak jumlah skor Ganjil Genap !!!";
+				cout << "====================================";
+        		cout << "\n            JUDI BOLA           ";
+        		cout << "\n====================================";
+				cout << "\n\nUang anda sekarang = " << uang;
+				cout<<"\nMau taruhan berapa ? "; cin >> bet;
+				cout<<"\n\n\tTebak jumlah skor Ganjil Genap !!!";
 				cout<<"\n\n[1]. Genap";
 				cout<<"\n[2]. Ganjil";
 				cout<<"\n\nPilihan anda : ";cin>>tebak;
 	
 				if (tebak == 1){
 					if((tim_a+tim_b)%2==0){
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+						cout<<"\n\t--------------------------------";
+						cout<<"\n\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t--------------------------------";
 						cout<<"\n\nSelamat jawaban anda benar";
 						uang = uang + bet;
-						cout << "\nUang anda sekarang = " << uang;
-						if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+						cout << "\nUang anda sekarang = " << uang << endl;
+						char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
+								goto BOLA;
 						}	
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 					else{
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
-						cout<<"\n\nMaaf anda kurang beruntung";
+						cout<<"\n\t-------------------";
+						cout<<"\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t-------------------";
+						cout<<"\n\nMaaf anda kurang beruntung !!!";
 						uang = uang - bet;
-						cout << "\nUang anda sekarang = " << uang;
+						cout << "\nUang anda sekarang = " << uang<<endl;;
 						if (uang == 0){
+							cout << "\n\n\tAnda tidak bisa bermain lagi, silahkan ngutang uang dulu ke orang";
+							cin.ignore();
+							cin.ignore();
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 				}
 				else if(tebak == 2){
 					if ((tim_a+tim_b)%2==1){
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
+						cout<<"\n\t--------------------------------";
+						cout<<"\n\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t--------------------------------";
 						cout<<"\n\nSelamat jawaban anda benar";
 						uang = uang + bet;
-						cout << "\nUang anda sekarang = " << uang;
-						if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+						cout << "\nUang anda sekarang = " << uang << endl;
+						char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
-						}	
+								goto BOLA;	
+						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 					else{
+						system("clear");
+						cout << "====================================";
+        				cout << "\n            JUDI BOLA           ";
+        				cout << "\n====================================";
 						cout<<"\n\nPertandinga antara Tim A dan Tim B berakhir dengan skor:";
-						cout<<"\nTim A "<<tim_a<<" - "<<tim_b<<" Tim B"<<endl;
-						cout<<"\n\nMaaf anda kurang beruntung";
+						cout<<"\n\t-------------------";
+						cout<<"\n\t|Tim A "<<tim_a<<" - "<<tim_b<<" Tim B|";
+						cout<<"\n\t-------------------";
+						cout<<"\n\nMaaf anda kurang beruntung !!!";
 						uang = uang - bet;
-						cout << "\nUang anda sekarang = " << uang;	
+						cout << "\nUang anda sekarang = " << uang<<endl;;
 						if (uang == 0){
+							cout << "\n\n\tAnda tidak bisa bermain lagi, silahkan ngutang uang dulu ke orang";
+							cin.ignore();
+							cin.ignore();
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto BOLA;
 					}
 				}
 			else{
@@ -252,7 +406,7 @@ int main(){
 			}
 			}
 		}
-	}
+	}//======================================================================================================================================
    
     else if(menu==3){
     	int tebak, hasil, a;
@@ -265,12 +419,13 @@ int main(){
 			goto MENU;
 		}
 		else{
+			ROULETTE:
             cout << "====================================";
             cout << "\n            JUDI ROULETTE           ";
             cout << "\n====================================";
             cout << "\n\nUang anda sekarang = " << uang;
             cout << "\nMau taruhan berapa ? "; cin >> bet;
-            cout << "\n\nTebak Warna Yang Keluar";
+            cout << "\n\n\tTebak Warna Yang Keluar";
             cout << "\n\n[1]. Merah (x2)";
             cout << "\n[2]. Biru  (x2)";
             cout << "\n[3]. Hitam (x6)";
@@ -281,87 +436,153 @@ int main(){
             hasil = warna[a];
                 if (hasil == tebak){
                     if(hasil==1){
-                        cout << "\nWarna yang keluar adalah warna : MERAH";
-                        cout << "\n\nSelamat anda MENANG !!!";
+                    	system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
+                        cout << "\n\nWarna yang keluar adalah warna : MERAH";
+                        cout << "\n\n\tSelamat anda MENANG !!!";
                         uang = uang + bet*2;
-                        cout << "\nUang anda sekarang = " << uang;
-                        if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+                        cout << "\n\nUang anda sekarang = " << uang;
+                        char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
+								goto ROULETTE;	
 						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
                     }
                     else if(hasil==2){
+                    	system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
                     	cout << "\nWarna yang keluar adalah warna : BIRU";
-                        cout << "\n\nSelamat anda MENANG !!!";
+                        cout << "\n\n\tSelamat anda MENANG !!!";
                         uang = uang + bet*2;
-                        cout << "\nUang anda sekarang = " << uang;
-                        if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+                        cout << "\n\nUang anda sekarang = " << uang;
+                        char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
+								goto ROULETTE;	
 						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
 					}
 					else{
+						system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
 						cout << "\nWarna yang keluar adalah warna : HITAM";
-                        cout << "\n\nSelamat anda MENANG !!!";
-                        uang = uang + bet*6;
-                        cout << "\nUang anda sekarang = " << uang;
-                        if ((uang >= 1000000) && (uang%1000000 == 0)){
-							char y;
-							cout << "\nAnda bisa mencairkan uang di menu utama";
+                        cout << "\n\n\tSelamat anda MENANG !!!";
+                        uang = uang + bet*2;
+                        cout << "\n\nUang anda sekarang = " << uang;
+                       char y;
+						if ((uang >= 1000000) || (uang%1000000 == 0)){
+							cout << "\n\nAnda bisa mencairkan uang di menu utama";
 							cout << "\nApakah anda ingin mencairkan uang atau lanjut bermain ? (Y/N) "; cin >> y;
+							system("clear");
 							if ((y == 'Y' || y == 'y'))
-								cout << "\ngoto menu";
+								goto MENU;
 							else
-								cout << "\ngoto BOLA";	
+								goto ROULETTE;	
 						}
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
 					}
 				}
                 else if ((tebak >= 1) && (tebak < 4)){
                     if(hasil==1){
-                        cout << "\nWarna yang keluar adalah warna : MERAH";
-                        cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+                    	system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
+                        cout << "\n\nWarna yang keluar adalah warna : MERAH";
+                        cout << "\n\n\tMaaf anda kurang beruntung, silahkan coba lagi !!!";
                         uang = uang - bet;
-                        cout << "\nUang anda sekarang = " << uang;
+                        cout << "\n\nUang anda sekarang = " << uang;
                         if (uang == 0){
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
                     }
                     else if(hasil==2){
-                    	cout << "\nWarna yang keluar adalah warna : BIRU";
-                        cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+                    	system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
+                    	cout << "\n\nWarna yang keluar adalah warna : BIRU";
+                        cout << "\n\n\tMaaf anda kurang beruntung, silahkan coba lagi !!!";
                         uang = uang - bet;
-                        cout << "\nUang anda sekarang = " << uang;
+                        cout << "\n\nUang anda sekarang = " << uang;
                         if (uang == 0){
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
 					}
 					else{
-						cout << "\nWarna yang keluar adalah warna : HITAM";
-                        cout << "\n\nMaaf anda kurang beruntung, silahkan coba lagi !!!";
+						system("clear");
+                    	cout << "====================================";
+            			cout << "\n            JUDI ROULETTE           ";
+            			cout << "\n====================================";
+						cout << "\n\nWarna yang keluar adalah warna : HITAM";
+                        cout << "\n\n\tMaaf anda kurang beruntung, silahkan coba lagi !!!";
                         uang = uang - bet;
-                        cout << "\nUang anda sekarang = " << uang;
+                        cout << "\n\nUang anda sekarang = " << uang;
                         if (uang == 0){
 							while(true){
 							cout << "Game OVER !!!              Game OVER !!!              Game OVER !!!" <<endl;
 							cout << "              Game OVER !!!              Game OVER !!!             " <<endl;
 							}
 						}
+						char y;
+						cout << "\n\nApakah anda ingin Mengganti game judi ini ? (Y/N) "; cin >> y;
+						system("clear");
+						if ((y == 'Y' || y == 'y'))
+							goto MENU;
+						else
+							goto ROULETTE;
 						}
 					}
                     else{
@@ -372,7 +593,15 @@ int main(){
 
 	else if(menu==4){
 		system("clear");
-		cout << "KERJA TU YANG HALAL";
+		if (uang <= 1000000)
+			cout << "KERJA TU YANG HALAL BIJI !!!"<<endl<<endl;
+		else{
+			cout << "\n\tUang anda belum mencapai Rp. 1000.000,00";
+			cin.ignore();
+			system("clear");
+			goto MENU;
+		}
+
 	}
 
     else if(menu==5){
@@ -384,7 +613,12 @@ int main(){
     }
         
     else{
-        cout << "Maaf menu tidak tersedia saat ini !!!" << endl;
+    	cout << "\n\t*******************************************";
+        cout << "\n\t*  Maaf menu tidak tersedia saat ini !!!  *";
+        cout << "\n\t*******************************************";
+        cin.ignore();
+        system("clear");
+        goto MENU;
 	}
 
     return 0;
