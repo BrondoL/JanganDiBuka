@@ -50,7 +50,7 @@ int main(){																						//Fungsi Utama
     }
     //=====================================MENU 2. JUDI BOLA===========================================================
 	else if(menu==2){																			//jika pilih 2
-		int pilih,a,b,tim_a,tim_b,tebak,genap,ganjil,hasilGG;
+		int pilih,a,b,tim_a,tim_b,tebak,hasilGG;
 		if (lo == 0){																			//lo ialah permisalan dari inputan username. jika lo = 0
 			system ("cls");																		//maka kata kata dibawah akan tercetak
 			cout << "\tMaaf Anda Belum Login !";
