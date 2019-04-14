@@ -61,7 +61,7 @@ void closing(){                                 //membuat fungsi untuk mencetak 
     cout<<"\t\t\t\t        atas nama \"CINEMA XXI\"\n";
 }
 int main(){
-    int pilih,kode, hargatiket,tiket,jmlh,kursi1[50]; //deklarasi variabel.
+    int pilih,kode, hargatiket,tiket,kursi1[50]; //deklarasi variabel.
     hargatiket=50000;               //menentukan harga tiket.
     char lanjut;
     string waktu = "";              //deklarasi waktu.
